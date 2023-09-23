@@ -13,7 +13,7 @@ namespace ProGrafica
     internal class Cuarto
     {
 
-        public double[] centro = new double[3]; // Array para almacenar las coordenadas del centro
+        public double[] centro = new double[3]; 
 
         public Cuarto(double[] centro)
         {
@@ -39,10 +39,10 @@ namespace ProGrafica
 
 
 
-        private void DrawCircle(double x, double y, double z, double radius, double rotationAngleDegrees, double[] centro)
+        public void DrawCircle(double x, double y, double z, double radius, double rotationAngleDegrees, double[] centro)
         {
             GL.PushMatrix(); // Save the current modelview matrix
-            GL.Translate(x + centro[0], y + centro[1], z + centro[2]); // Translate to the circle's position with centro offset
+            GL.Translate(x + centro[0], y + centro[1], z + centro[2]); 
             GL.Rotate(rotationAngleDegrees, 0.0, 1.0, 0.0); // Apply the rotation to the circle
 
             GL.Begin(PrimitiveType.Polygon);
@@ -66,7 +66,7 @@ namespace ProGrafica
 
         public void DrawCar(double[] centro)
         {
-            GL.Begin(PrimitiveType.Quads); //vidrio delantero
+            GL.Begin(PrimitiveType.Quads); 
             GL.Color3(Color.FromArgb(1, 170, 51, 51));
             GL.Vertex3(-0.4f + centro[0], 0.5f + centro[1], 1.25f + centro[2]);
             GL.Vertex3(-0.4f + centro[0], 0.75f + centro[1], 1.25f + centro[2]);
@@ -74,7 +74,7 @@ namespace ProGrafica
             GL.Vertex3(-0.2f + centro[0], 0.5f + centro[1], 1.25f + centro[2]);
             GL.End();
 
-            GL.Begin(PrimitiveType.Quads); //vidrio trasero
+            GL.Begin(PrimitiveType.Quads); 
             GL.Color3(Color.FromArgb(1, 170, 51, 51));
             GL.Vertex3(-0.4 + centro[0], 0.75 + centro[1], 0.75 + centro[2]);
             GL.Vertex3(-0.4 + centro[0], 0.5 + centro[1], 0.75 + centro[2]);
@@ -82,7 +82,7 @@ namespace ProGrafica
             GL.Vertex3(-0.2 + centro[0], 0.75 + centro[1], 0.75 + centro[2]);
             GL.End();
 
-            GL.Begin(PrimitiveType.Quads); //techo
+            GL.Begin(PrimitiveType.Quads); 
             GL.Color3(Color.FromArgb(1, 170, 51, 51));
             GL.Vertex3(-0.4 + centro[0], 0.75 + centro[1], 0.75 + centro[2]);
             GL.Vertex3(-0.4 + centro[0], 0.75 + centro[1], 1.25 + centro[2]);
@@ -90,23 +90,23 @@ namespace ProGrafica
             GL.Vertex3(-0.2 + centro[0], 0.75 + centro[1], 0.75 + centro[2]);
             GL.End();
 
-            GL.Begin(PrimitiveType.Quads); //cabina izq
+            GL.Begin(PrimitiveType.Quads); 
             GL.Color3(Color.FromArgb(1, 170, 51, 51));
             GL.Vertex3(-0.4 + centro[0], 0.75 + centro[1], 1.25 + centro[2]);
             GL.Vertex3(-0.4 + centro[0], 0.5 + centro[1], 1.25 + centro[2]);
-            GL.Vertex3(-0.4 + centro[0], 0.5 + centro[1], 0.50 + centro[2]);
-            GL.Vertex3(-0.4 + centro[0], 0.75 + centro[1], 0.75 + centro[2]);
+            GL.Vertex3(-0.4 + centro[0], 0.5 + centro[1], 0.85 + centro[2]);
+            GL.Vertex3(-0.4 + centro[0], 0.75 + centro[1], 0.85 + centro[2]);
             GL.End();
 
-            GL.Begin(PrimitiveType.Quads); //cabina der
+            GL.Begin(PrimitiveType.Quads); 
             GL.Color3(Color.FromArgb(1, 170, 51, 51));
             GL.Vertex3(-0.2 + centro[0], 0.75 + centro[1], 1.25 + centro[2]);
             GL.Vertex3(-0.2 + centro[0], 0.5 + centro[1], 1.25 + centro[2]);
-            GL.Vertex3(-0.2 + centro[0], 0.5 + centro[1], 0.50 + centro[2]);
-            GL.Vertex3(-0.2 + centro[0], 0.75 + centro[1], 0.75 + centro[2]);
+            GL.Vertex3(-0.2 + centro[0], 0.5 + centro[1], 0.85 + centro[2]);
+            GL.Vertex3(-0.2 + centro[0], 0.75 + centro[1], 0.85 + centro[2]);
             GL.End();
 
-            GL.Begin(PrimitiveType.Quads); //parachoque delantero
+            GL.Begin(PrimitiveType.Quads); 
             GL.Color3(Color.FromArgb(1, 170, 51, 51));
             GL.Vertex3(-0.40 + centro[0], 0.5 + centro[1], 1.5 + centro[2]);
             GL.Vertex3(-0.40 + centro[0], 0.2 + centro[1], 1.5 + centro[2]);
@@ -114,7 +114,7 @@ namespace ProGrafica
             GL.Vertex3(-0.20 + centro[0], 0.5 + centro[1], 1.5 + centro[2]);
             GL.End();
 
-            GL.Begin(PrimitiveType.Quads); //puertas izq
+            GL.Begin(PrimitiveType.Quads); 
             GL.Color3(Color.FromArgb(1, 170, 51, 51));
             GL.Vertex3(-0.40 + centro[0], 0.5 + centro[1], 1.5 + centro[2]);
             GL.Vertex3(-0.40 + centro[0], 0.2 + centro[1], 1.5 + centro[2]);
@@ -122,7 +122,7 @@ namespace ProGrafica
             GL.Vertex3(-0.40 + centro[0], 0.5 + centro[1], 0.5 + centro[2]);
             GL.End();
 
-            GL.Begin(PrimitiveType.Quads); //puertas back
+            GL.Begin(PrimitiveType.Quads); 
             GL.Color3(Color.FromArgb(1, 170, 51, 51));
             GL.Vertex3(-0.40f + centro[0], 0.5f + centro[1], 0.5f + centro[2]);
             GL.Vertex3(-0.40f + centro[0], 0.2f + centro[1], 0.5f + centro[2]);
@@ -130,7 +130,7 @@ namespace ProGrafica
             GL.Vertex3(-0.20f + centro[0], 0.5f + centro[1], 0.5f + centro[2]);
             GL.End();
 
-            GL.Begin(PrimitiveType.Quads); //puertas derecha
+            GL.Begin(PrimitiveType.Quads); 
             GL.Color3(Color.FromArgb(1, 170, 51, 51));
             GL.Vertex3(-0.20 + centro[0], 0.5 + centro[1], 1.5 + centro[2]);
             GL.Vertex3(-0.20 + centro[0], 0.2 + centro[1], 1.5 + centro[2]);
@@ -145,9 +145,9 @@ namespace ProGrafica
         }
 
 
-        public static void DrawFloor(double[] centro)
+        public void DrawFloor(double[] centro)
         {
-            //Dibujo de la pared
+            
             GL.Begin(PrimitiveType.Quads);
 
             GL.Color3(255.0f, 165.0f, 0.0f);
@@ -165,8 +165,8 @@ namespace ProGrafica
 
         public void DrawRepisa(double[] centro)
         {
-            GL.Begin(PrimitiveType.Quads); // Dibujar la repisa
-            GL.Color3(Color.FromArgb(101, 56, 24)); // Plataforma repisa
+            GL.Begin(PrimitiveType.Quads); 
+            GL.Color3(Color.FromArgb(101, 56, 24)); 
 
             GL.Vertex3(-1.0 + centro[0], 0.04 + centro[1], 0.01 + centro[2]);
             GL.Vertex3(-1.0 + centro[0], 0.04 + centro[1], 2.0 + centro[2]);
@@ -174,19 +174,19 @@ namespace ProGrafica
             GL.Vertex3(1.0 + centro[0], 0.04 + centro[1], 0.01 + centro[2]);
 
             GL.End();
-            GL.Begin(PrimitiveType.Quads); // Repisa lado izq
+            GL.Begin(PrimitiveType.Quads); 
             GL.Vertex3(-1.0 + centro[0], 0.04 + centro[1], 0.01 + centro[2]);
             GL.Vertex3(-1.0 + centro[0], -0.04 + centro[1], 0.01 + centro[2]);
             GL.Vertex3(-1.0 + centro[0], -0.04 + centro[1], 2.0 + centro[2]);
             GL.Vertex3(-1.0 + centro[0], 0.04 + centro[1], 2.0 + centro[2]);
             GL.End();
-            GL.Begin(PrimitiveType.Quads); // Repisa lado derecho
+            GL.Begin(PrimitiveType.Quads);
             GL.Vertex3(1.0 + centro[0], 0.04 + centro[1], 0.01 + centro[2]);
             GL.Vertex3(1.0 + centro[0], -0.04 + centro[1], 0.01 + centro[2]);
             GL.Vertex3(1.0 + centro[0], -0.04 + centro[1], 2.0 + centro[2]);
             GL.Vertex3(1.0 + centro[0], 0.04 + centro[1], 2.0 + centro[2]);
             GL.End();
-            GL.Begin(PrimitiveType.Quads); // Repisa frontal
+            GL.Begin(PrimitiveType.Quads); 
             GL.Vertex3(-1.0 + centro[0], 0.04 + centro[1], 2.0 + centro[2]);
             GL.Vertex3(-1.0 + centro[0], -0.04 + centro[1], 2.0 + centro[2]);
             GL.Vertex3(1.0 + centro[0], -0.04 + centro[1], 2.0 + centro[2]);
